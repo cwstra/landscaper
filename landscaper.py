@@ -28,7 +28,7 @@ print('Colorifying')
 colorArr = np.stack([heightfunction(0)(heightArr),heightfunction(1)(heightArr),heightfunction(2)(heightArr)],2)
 colorImg = Image.fromarray(colorArr)
 colorImg = colorImg.convert('RGBA')
-colorImg.show()
+#colorImg.show()
 print('Filtering maps')
 
 def filterImg(img, ele):
@@ -40,16 +40,11 @@ landImg = Image.new('RGBA', colorImg.size, (0,0,0,0))
 singleImgs = []
 for ind, data in enumerate(settings['color_array']):
     sing = filterImg(colorImg, data)
-    sing.show()
+    #sing.show()
     if ind <= 2:
         singleImgs.append(sing)
     else:
         landImg.paste(sing, None, sing)
-
-#for i in singleImgs:
-#   i.show()
-#landImg.show()
-#colorImg.show()
 
 print('Painting coastlines')
 
@@ -85,8 +80,8 @@ black = Image.new('L', colorImg.size, 0)
 black.paste(shoremask, None, landImg)
 shoremask = black
 
-shoretrace.show()
-landImg.show()
+#shoretrace.show()
+#landImg.show()
 
 print("Finishing Up")
 
@@ -97,6 +92,5 @@ endImg.paste(singleImgs[0],None,singleImgs[0]);endImg.paste(shoaltrace,None,shoa
 endImg.paste(landImg,None,landImg)
 endImg.paste(shoretrace, None, shoremask)
 
-
 endImg.convert('RGB').save('out.png','png')
-
+endImg.show()
