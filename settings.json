@@ -1,0 +1,9 @@
+{
+   "heightmap_name":"heightmap.png",
+   "shore_blob":2,
+   "shoal_blob":2,
+   "coast_blob":3,
+   "height_comment":               ["Deep->Mid",  "Mid->Shallow", "Shallow->Land", "Land->Highland","Highland->Low Mt.", "Low Mt.-> Mt.", "Mt.-> High Mt.", "High Mt.-> Peak"],
+   "height_array":                 [3,            4,             5,              50,              100,                150,              200,            255],
+   "color_array": [[57, 165, 189], [66, 181, 206], [81, 186, 218], [97, 195, 146], [81, 179, 128], [162, 130, 89],      [195, 146, 105], [220, 162, 114], [242, 178, 130]]
+}
